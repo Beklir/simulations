@@ -25,7 +25,7 @@ public class BallPhysics {
     private Label energyLabel;
 
 
-    public BallPhysics(Circle ball, Scene scene, Label energyLabel, double s_x, double s_y, double v_x, double v_y, double a_x, double a_y) {
+    BallPhysics(Circle ball, Scene scene, Label energyLabel, double s_x, double s_y, double v_x, double v_y, double a_x, double a_y) {
         this.ball = ball;
         this.scene = scene;
         this.s_x = s_x;

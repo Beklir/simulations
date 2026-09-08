@@ -20,8 +20,12 @@ public class FallingBallSimulation extends Application {
 
         double s_x = scene.getWidth() / 2;
         double s_y = 100;
+        double v_x = 4;
+        double v_y = -4;
+        double a_x = 0;
+        double a_y = 0;
 
-        BallPhysics physics = new BallPhysics(ball, scene, energy, s_x, s_y, 4,-4,0,0);
+        BallPhysics physics = new BallPhysics(ball, scene, energy, s_x, s_y, v_x,v_y,a_x,a_y);
 
         primaryStage.setTitle("Ball Simulation");
         primaryStage.setScene(scene);
