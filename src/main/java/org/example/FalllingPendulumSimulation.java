@@ -30,7 +30,7 @@ public class FalllingPendulumSimulation extends Application {
         rod.endXProperty().bind(bob.centerXProperty());
         rod.endYProperty().bind(bob.centerYProperty());
 
-        PendulumPhysics physics = new PendulumPhysics(bob, rod, rod_length, pivot_x, pivot_y,angle);
+        Pendulum physics = new Pendulum(bob, rod, rod_length, pivot_x, pivot_y,angle);
 
         primaryStage.setTitle("Pendulum Simulation");
         primaryStage.setScene(scene);

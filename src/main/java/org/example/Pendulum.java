@@ -4,7 +4,7 @@ import javafx.animation.AnimationTimer;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 
-public class PendulumPhysics {
+public class Pendulum {
     private final double DAMPING = 0.999;
     private final double PIXEL_METER_SCALE = 100;
     private final double G = 9.81 * PIXEL_METER_SCALE;
@@ -21,8 +21,8 @@ public class PendulumPhysics {
     private double bob_x;
     private double bob_y;
 
-    PendulumPhysics(Circle bob, Line rod, double rod_length, double pivot_x,
-                    double pivot_y,double angle) {
+    public Pendulum(Circle bob, Line rod, double rod_length, double pivot_x,
+                    double pivot_y, double angle) {
         this.bob = bob;
         this.rod = rod;
         this.angle = angle;
@@ -48,7 +48,7 @@ public class PendulumPhysics {
 
                 angular_a = - (G / rod_length) * Math.sin(angle);
                 angular_v += angular_a * deltaSeconds;
-                angular_v *= DAMPING;
+                angular_v *= Math.pow(DAMPING, deltaSeconds * 60.0);
                 angle += angular_v * deltaSeconds;
 
                 bob_x = pivot_x + rod_length * Math.sin(angle);
